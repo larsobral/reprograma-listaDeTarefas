@@ -1,19 +1,20 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const listSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  name: {
-    type: String,
-    required: true
-  },
-  text: {
-    type: String,
-    required: true
-  },
-  categoria: {
-    type: String,
-    required: true
-  }
+//estrutura do seu model (atributos da sua entidade)
+const listaSchema = new mongoose.Schema({
+    id: { type: String },
+    name: { type: String },
+    email: { type: String },
+    documentNumber: { type: String },
+    travelId: { type: String }
+}, {
+    //gera por padrão uma versão para cada atualização do documento
+    versionKey: false
 });
 
-module.exports = mongoose.model('list', listSchema)
+// atribuindo o esquema a uma collection
+// estou definindo o nome da collection que irei salvar no banco
+const lista = mongoose.model('list', listaSchema);
+
+// exportar o model para ser utilizado
+module.exports = lista;

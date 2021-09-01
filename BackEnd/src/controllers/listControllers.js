@@ -1,13 +1,19 @@
-const mongoose = require('mongoose')
-const Card = require('../models/list')
+const mongoose = require('mongoose');
+const card = require('../models/list');
 
 // lista todos os card da lista
-console.log(Card)
-const getAll = async (req, res) => {
-  const cards = await Card.find()
-  console.log(cards)
-  res.status(200).json(cards)
+//ds
+
+const getAll = (req, res) => {
+  card.find(function (err, card) {
+      if (err) {
+          res.status(500).send({ message: err.message })
+      }
+      res.status(200).send(card);
+      console.log('ok')
+  })
 };
+
 
 const createCard = async (req, res) => {
   const card = new Card({

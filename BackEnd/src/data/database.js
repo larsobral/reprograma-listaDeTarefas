@@ -1,12 +1,12 @@
-require('dotenv').config()
+// require('dotenv').config()
 const mongoose = require('mongoose')
 
 const connect = () => {mongoose.connect(
-  process.env.DATABASE_URL, {
+  'mongodb://localhost:27017/to-do-list', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }) 
-  .then(console.log(`Database to-do list conectada com sucesso. ${process.env.DATABASE_URL}`))
+  .then(console.log(`Database to-do list conectada com sucesso.`))
   .catch(err => console.err)
 }
 

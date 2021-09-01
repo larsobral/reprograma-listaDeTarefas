@@ -1,8 +1,12 @@
-const express = require('express')
-const router = express.Router()
-const controller = require('../controllers/listControllers')
+const express = require('express');
+const router = express.Router();
 
-router.get('/', controller.getAll)
+const controller = require('../controllers/listcontrollers');
+
+// rotas
+
+// lista todos da lista
+router.get('/todos', controller.getAll)
 
 router.post('/create', controller.createCard)
 
