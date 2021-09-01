@@ -1,27 +1,24 @@
 const mongoose = require('mongoose');
-const card = require('../models/list');
+const Lista = require('../models/list');
 
 // lista todos os card da lista
-//ds
+const getAll = async (req, res) => {
+  const cards = await Lista.find()
+  res.json(cards)
+}
 
-const getAll = (req, res) => {
-  card.find(function (err, card) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      }
-      res.status(200).send(card);
-      console.log('ok')
-  })
-};
-
-
+// criar novo card
 const createCard = async (req, res) => {
-  const card = new Card({
+  const card = new Lista({
     _id: new mongoose.Types.ObjectId(),
-    nome: req.body.nome,
-    text: req.body.text,
-    categoria: req.body.categoria
+    texto: req.body.texto,
+    categoria: req.body.categoria,
+    criadoEm: req.body.criadoEm
   })
+  const cardJaExiste = await Lista.findOne({texto: req.body.texto})
+  if (cardJaExiste) {
+    return res.status(409).json({error: 'Card já cadastrado.'})
+  }
   try{
     const novoCard = await card.save()
     res.status(201).json(novoCard)

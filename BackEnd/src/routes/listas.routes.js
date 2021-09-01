@@ -7,7 +7,7 @@ const controller = require('../controllers/listcontrollers');
 router.get('/', controller.getAll)
 
 // criar um novo card
-router.post('/', controller.createCard)
+router.post('/create', controller.createCard)
 
 // router.patch('/:id', controller.updateStudio)
 
