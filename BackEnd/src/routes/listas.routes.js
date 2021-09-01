@@ -3,12 +3,11 @@ const router = express.Router();
 
 const controller = require('../controllers/listcontrollers');
 
-// rotas
+// listar todos os cards
+router.get('/', controller.getAll)
 
-// lista todos da lista
-router.get('/todos', controller.getAll)
-
-router.post('/create', controller.createCard)
+// criar um novo card
+router.post('/', controller.createCard)
 
 // router.patch('/:id', controller.updateStudio)
 
