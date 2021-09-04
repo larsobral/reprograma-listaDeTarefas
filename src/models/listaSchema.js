@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
 
-//estrutura do seu model (atributos da sua entidade)
 const listaSchema = new mongoose.Schema({
-    texto: { type: String },
-    categoria: { type: String },
+    texto: { 
+        type: String,
+        required: true
+    },
+    categoria: { 
+        type: String,
+        required: true
+    },
     criadoEm: { 
         type: Date, 
         default: new Date 

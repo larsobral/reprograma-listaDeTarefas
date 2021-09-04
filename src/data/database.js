@@ -9,7 +9,7 @@ const connect = () => {
         useUnifiedTopology: true
     })
     .then(()=>{
-        console.log("Conectadas bb no MongoDb Atlas")
+        console.log("Conectado no MongoDb")
     })
     .catch((error)=>{
         console.log("Algo deu errado")

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Lista = require('../models/list');
+const Lista = require('../models/listaSchema');
 
 // lista todos os card da lista
 const getAll = async (req, res) => {
