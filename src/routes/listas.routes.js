@@ -3,6 +3,11 @@ const router = express.Router();
 
 const controller = require('../controllers/listcontrollers');
 
+
+router.get("/oi", (req, resp)=>{
+  resp.status(200).send({"mensagem":"oi to aqui ta funcionando "})
+})
+
 // listar todos os cards
 router.get('/', controller.getAll)
 
