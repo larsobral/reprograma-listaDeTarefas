@@ -13,7 +13,7 @@ const listasRouter = require('./src/routes/listas.routes')
 app.use('/todos', listasRouter)
 
 // servidor
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
