@@ -10,27 +10,28 @@ const getAll = async (req, res) => {
 // buscar card pelo id gerado pelo mongo
 const getCardById = async (req, res) => {
   try {
-    const card = await Lista.findById(req.params.id)
+    const resquestId = req.params.id;
+    const card = await Lista.findOne({ _id: resquestId })
     if(card == null) {
-      return res.status(404).json({message: 'card nao encontrado'})
-  }
-  res.status(200).json(card)
+      return res.status(404).json({message: 'Card não encontrado'})
+    }
+    res.status(200).json(card)
   } catch (error){
     res.status(500).json({ message: error.message })
   }
-  
-  Lista.findOne({ _id: resquestId }, function (err, cardFound) {
-    if (err) {
-      res.status(500).send({ message: err.message })
-    } else {
-      if (cardFound) {
-        res.status(200).send(cardFound.toJSON())
-      } else {
-        res.status(404).send({ "message": "Card não encontrado" })
-      }
-    }
-  })
-};
+}
+//   Lista.findOne({ _id: resquestId }, function (err, cardFound) {
+//     if (err) {
+//       res.status(500).send({ message: err.message })
+//     } else {
+//       if (cardFound) {
+//         res.status(200).send(cardFound.toJSON())
+//       } else {
+//         res.status(404).send({ "message": "Card não encontrado" })
+//       }
+//     }
+//   })
+// };
 
 // const getAllvida = async (req, res) => {
 //   const cards = await Lista.find().populate('categoria')
