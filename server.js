@@ -4,7 +4,7 @@ const cors = require('cors')
 
 // servidor
 const PORT = process.env.PORT;
-
+const listasRouter = require('./src/routes/listas.routes')
 //conectar o db
 const db = require('./src/data/database')
 db.connect()
@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 // rota http://localhost:8080/todos sendo chamada com sucesso
-const listasRouter = require('./src/routes/listas.routes')
+
 app.use('/todos', listasRouter)
 
 app.listen(PORT, () => {
