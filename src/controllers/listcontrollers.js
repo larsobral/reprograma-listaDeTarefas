@@ -9,7 +9,16 @@ const getAll = async (req, res) => {
 
 // buscar card pelo id gerado pelo mongo
 const getCardById = async (req, res) => {
-  const resquestId = req.params.id
+  try {
+    const card = await Lista.findById(req.params.id)
+    if(card == null) {
+      return res.status(404).json({message: 'card nao encontrado'})
+  }
+  res.status(200).json(card)
+  } catch (error){
+    res.status(500).json({ message: error.message })
+  }
+  
   Lista.findOne({ _id: resquestId }, function (err, cardFound) {
     if (err) {
       res.status(500).send({ message: err.message })
@@ -17,7 +26,7 @@ const getCardById = async (req, res) => {
       if (cardFound) {
         res.status(200).send(cardFound.toJSON())
       } else {
-        res.status(204).send();
+        res.status(404).send({ "message": "Card não encontrado" })
       }
     }
   })
@@ -51,26 +60,34 @@ const createCard = async (req, res) => {
 
 const updateTexto = async (req, res) => {
   try {
-    // tentar encontrar um card por id
     const card = await Lista.findById(req.params.id)
-    // se não encontrar 
+    if(card == null) {
+      return res.status(404).json({message: 'Card nao encontrado'})
+  }
     if (req.body.texto != null) {
       card.texto = req.body.texto
     }
+    if (req.body.texto != null) {
+      card.categoria = req.body.categoria
+    }
+
     const cardAtualizado = await card.save()
     res.status(200).json(cardAtualizado)
   } catch (err) {
-    res.status(500).json({message: err.message})
+    res.status(500).json({message: error.message})
   }
 };
 
 const deleteCard = async (req, res) => {
   try {
     const card = await Lista.findById(req.params.id)
-    const novaLista = await card.remove()
-    res.status(200).json(novaLista)
-  } catch (err) {
-    res.status(409).json({error: 'Card já foi deletado.'})
+    if (card == null) {
+      return res.status(404).json({message: 'card nao encontrado!'})
+    }
+    await card.remove()
+    res.status(200).json({ message: 'Card deletado com sucesso!'})
+  } catch (error) {
+    res.status(500).json({message: error.message})
   }
 }
 
