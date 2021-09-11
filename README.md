@@ -48,8 +48,9 @@ _**{GET}**_
 
 <br>
 ### Documentação
+<br>
 https://documenter.getpostman.com/view/16932566/U16kqQcw
-
+<br>
 ### Autor
 <br>
 _Larissa Vilela Sobral_
