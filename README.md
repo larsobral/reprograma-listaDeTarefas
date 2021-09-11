@@ -23,3 +23,30 @@ O **To-do List {lista de tarefas}** Uma aplicação voltada para o comprimento d
 ## 💾 Postman:
 
 ![post](https://i.ibb.co/n30Sfqz/crud-completo.gif)
+
+<br>
+
+**Rotas**
+
+_**{GET}**_
+
+:closed_book:  **"/lista"** Deverá retornar todos os cards cadastrados
+
+:closed_book: **"/lista/[ID]"** Deverá retornar o card cadastrado por ID
+
+**_{POST}_**
+
+:closed_book: **"lista/register"**  Deverá criar um novo card
+
+**_{PATCH}_**
+
+:closed_book: **"/lista/update//[ID]"** Deverá alterar informação do card por id específico
+
+**_{DELETE}_**
+
+:closed_book:  **"/lista/delete/[ID]"** Deverá deletar card por id
+
+<br>
+
+###Autor
+_Larissa Vilela Sobral_
