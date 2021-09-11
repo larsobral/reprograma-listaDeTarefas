@@ -1,4 +1,8 @@
-# reprograma-listaDeTarefas
+# To-do List {lista de tarefas} - Projeto Final
+
+![site](https://i.ibb.co/8rZRdcj/desktop-list.gif)
+## Sobre o Projeto
+O **To-do List {lista de tarefas}** Uma aplicação voltada para o comprimento de tarefas diárias, onde a API possibilita adicionar novos objetivos diários como também retirar aquele que já foi concluído. A ideia inicial é criar uma coleção onde o usuário vai adicionar seus objetivos e classificá-los por tema.
 
 ## 💾 Tecnologias utilizadas:
 | Ferramenta | Descrição |
@@ -15,3 +19,5 @@
  `Postman` | interface gráfica para realizar os testes|
 
 <br>
+## 💾 Postman:
+![postman](https://i.ibb.co/n30Sfqz/crud-completo.gif)
