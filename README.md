@@ -50,6 +50,7 @@ _**{GET}**_
 
 https://documenter.getpostman.com/view/16932566/U16kqQcw
 
+## Authors
 
 ### [Larissa Vilela](https://www.linkedin.com/in/larissa-vilela-sobral/)
 
