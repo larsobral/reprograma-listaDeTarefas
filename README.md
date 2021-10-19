@@ -46,11 +46,10 @@ _**{GET}**_
 
 :closed_book:  **"/lista/delete/[ID]"** Deverá deletar card por id
 
-<br>
 ### Documentação
-<br>
+
 https://documenter.getpostman.com/view/16932566/U16kqQcw
-<br>
-### Autor
-<br>
-_Larissa Vilela Sobral_
+
+
+### [Larissa Vilela](https://www.linkedin.com/in/larissa-vilela-sobral/)
+
