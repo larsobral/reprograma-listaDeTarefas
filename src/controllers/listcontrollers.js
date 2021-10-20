@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 const Lista = require('../models/listaSchema');
 
-// lista todos os card da lista
 const getAll = async (req, res) => {
   const cards = await Lista.find()
   res.json(cards)
 }
 
-// buscar card pelo id gerado pelo mongo
 const getCardById = async (req, res) => {
   try {
     const resquestId = req.params.id;
@@ -20,26 +18,7 @@ const getCardById = async (req, res) => {
     res.status(500).json({ message: error.message })
   }
 }
-//   Lista.findOne({ _id: resquestId }, function (err, cardFound) {
-//     if (err) {
-//       res.status(500).send({ message: err.message })
-//     } else {
-//       if (cardFound) {
-//         res.status(200).send(cardFound.toJSON())
-//       } else {
-//         res.status(404).send({ "message": "Card não encontrado" })
-//       }
-//     }
-//   })
-// };
 
-// const getAllvida = async (req, res) => {
-//   const cards = await Lista.find().populate('categoria')
-//   const cardsFiltrados = cards.filter(card => card.categoria == "vida")
-//   res.json(cardsFiltrados)
-// }
-
-// criar novo card
 const createCard = async (req, res) => {
   const card = new Lista({
     _id: new mongoose.Types.ObjectId(),
