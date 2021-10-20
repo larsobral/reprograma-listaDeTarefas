@@ -46,6 +46,9 @@ _**{GET}**_
 
 :closed_book:  **"/lista/delete/[ID]"** Deverá deletar card por id
 
+### Front-End 
+Esse projeto foi realizado toda parte do front utilizando fatch para consumir a API, aplicação foi toda feita em javascript vanilla e CSS3.
+
 ### Documentação
 
 https://documenter.getpostman.com/view/16932566/U16kqQcw
@@ -53,4 +56,3 @@ https://documenter.getpostman.com/view/16932566/U16kqQcw
 ## Authors
 
 ### [Larissa Vilela](https://www.linkedin.com/in/larissa-vilela-sobral/)
-
