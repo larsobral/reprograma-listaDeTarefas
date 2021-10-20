@@ -48,6 +48,8 @@ _**{GET}**_
 
 ### Front-End 
 Esse projeto foi realizado toda parte do front utilizando fatch para consumir a API, aplicação foi toda feita em javascript vanilla e CSS3.
+![imagem ilustrativa](https://i.ibb.co/dDv5WMB/image.png)
+[Link Repositorio](https://github.com/larissavilelasobral/front-reprograma-listaDeTarefas/blob/master/js/index.js)
 
 ### Documentação
 
